@@ -1,0 +1,39 @@
+---
+title: "HW1-part 2"
+author: "Cheng Li"
+date: "2017/9/18"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+### Generating 100 values from a log-normal distribution
+
+mu=1, sigma=.25
+
+
+```{r sample}
+x <- rlnorm(100,meanlog=1,sdlog=0.25)
+```
+
+### Creating a histogram of the distribution above
+
+
+```{r histogram}
+hist(x,xlab="Values",ylab="Frequency",main="A sample of log-normal distribution")
+```
+
+### Creating a histogram of the distribution above on log scale
+
+```{r}
+hist(log(x),xlab="Values",ylab="Frequency",main="A sample of log-normal distribution")
+```
+
+### Mean and variance of the sample
+
+```{r}
+print(paste0('mean = ', round(mean(x), 2)))
+print(paste0('variance = ', round(var(x), 2)))
+```
